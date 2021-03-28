@@ -55,7 +55,7 @@ app.use(passport.initialize());
 
 
 
-app.use('/', indexRouter);
+//app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // function auth (req, res, next) {
