@@ -48,7 +48,7 @@ commentRouter.route('/')
     res.statusCode = 403;
     res.end('PUT operation not supported on /comments/');
 })
-.delete(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
+.delete(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
     Comments.remove({})
     .then((resp) => {
         res.statusCode = 200;
