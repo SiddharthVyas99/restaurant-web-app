@@ -76,7 +76,14 @@ app.use('/users', usersRouter);
 
 
 
-
+if(process.env.NODE_ENV=="production"){
+app.use(express.static('tulip-client/build'));
+const path=require('path');
+app.get("*",(req,res)=>{
+  res.send(path.resolve(__dirname,'tulip-client','build','index.html'));
+});
+}
+else
 app.use(express.static(path.join(__dirname, 'public')));
 
 
