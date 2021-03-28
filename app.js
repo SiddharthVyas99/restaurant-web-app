@@ -83,9 +83,9 @@ app.get("*",(req,res)=>{
   res.send(path.resolve(__dirname,'tulip-client','build','index.html'));
 });
 }
-else
+else{
 app.use(express.static(path.join(__dirname, 'public')));
-
+}
 
 app.use('/dishes',dishRouter);
 app.use('/promotions',promoRouter);
