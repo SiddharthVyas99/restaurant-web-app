@@ -52,10 +52,10 @@ app.use(cookieParser('12345-67890-09876-54321'));
 
 if(process.env.NODE_ENV==="production"){
   app.use(express.static('tulip-client/build'));
-  const path=require('path');
-  app.get("*",(req,res)=>{
-    res.send(path.resolve(__dirname,'tulip-client','build','index.html'));
-  });
+  // const path=require('path');
+  // app.get("*",(req,res)=>{
+  //   res.send(path.resolve(__dirname,'tulip-client','build','index.html'));
+  // });
   }
   else{
   app.use(express.static(path.join(__dirname, 'public')));
