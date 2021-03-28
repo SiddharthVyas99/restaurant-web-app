@@ -50,16 +50,7 @@ app.use(cookieParser('12345-67890-09876-54321'));
 //   store:new FileStore()
 // }));
 
-if(process.env.NODE_ENV==="production"){
-  app.use(express.static('tulip-client/build'));
-  // const path=require('path');
-  // app.get("*",(req,res)=>{
-  //   res.send(path.resolve(__dirname,'tulip-client','build','index.html'));
-  // });
-  }
-  else{
-  app.use(express.static(path.join(__dirname, 'public')));
-  }
+
 
 app.use(passport.initialize());
 // app.use(passport.session());
@@ -97,7 +88,16 @@ app.use('/leaders',leaderRouter);
 app.use('/imageUpload',uploadRouter);
 
 
-
+if(process.env.NODE_ENV==="production"){
+  app.use(express.static('tulip-client/build'));
+  const path=require('path');
+  app.get("*",(req,res)=>{
+    res.send(path.resolve(__dirname,'tulip-client','build','index.html'));
+  });
+  }
+  else{
+  app.use(express.static(path.join(__dirname, 'public')));
+  }
 
 
 // catch 404 and forward to error handler
