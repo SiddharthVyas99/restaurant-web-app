@@ -53,6 +53,17 @@ app.use(cookieParser('12345-67890-09876-54321'));
 app.use(passport.initialize());
 // app.use(passport.session());
 
+if(process.env.NODE_ENV==="production"){
+  app.use(express.static('tulip-client/build'));
+  const path=require('path');
+  app.get("*",(req,res)=>{
+    res.send(path.resolve(__dirname,'tulip-client','build','index.html'));
+  });
+  }
+  else{
+  app.use(express.static(path.join(__dirname, 'public')));
+  }
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -76,16 +87,7 @@ app.use('/users', usersRouter);
 
 
 
-if(process.env.NODE_ENV==="production"){
-app.use(express.static('tulip-client/build'));
-const path=require('path');
-app.get("*",(req,res)=>{
-  res.send(path.resolve(__dirname,'tulip-client','build','index.html'));
-});
-}
-else{
-app.use(express.static(path.join(__dirname, 'public')));
-}
+
 
 app.use('/dishes',dishRouter);
 app.use('/promotions',promoRouter);
