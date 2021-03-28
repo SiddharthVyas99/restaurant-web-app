@@ -22,7 +22,10 @@ const Dishes = require('./models/dishes');
 
 // const url = 'mongodb://localhost:27017/conFusion';
 const url=config.mongoUrl;
-const connect = mongoose.connect(url);
+const connect = mongoose.connect(url,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 connect.then((db) => {
     console.log("Connected correctly to server");
