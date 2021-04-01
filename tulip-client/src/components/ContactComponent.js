@@ -112,15 +112,16 @@ class Contact extends Component {
                     <h3>Location Information</h3>
                     </div>
                     <div className="col-12 col-sm-4 offset-sm-1">
-                            <h5>Our Address</h5>
-                            <address>
-                            121, Clear Water Bay Road<br />
-                            Clear Water Bay, Kowloon<br />
-                            HONG KONG<br />
-                            <i className="fa fa-phone"></i>: +852 1234 5678<br />
-                            <i className="fa fa-fax"></i>: +852 8765 4321<br />
-                            <i className="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
-                            </address>
+                        <h5>Our Address</h5>
+                        <address>
+                        Near Gayatri Ashram Mandir, <br />
+                        Opp. Sales Tax Office, Ajmer Road,<br />
+                        Bhilwara - 311 001, INDIA<br />
+                        <i className="fa fa-phone fa-lg"></i>:+91-72300-25701 / 02 / 03<br />
+                        <i className="fa fa-fax fa-lg"></i>: 01482-297200<br />
+                        <i className="fa fa-envelope fa-lg"></i>: <a href="mailto:info@tulipcontinental.com">
+                            info@tulipcontinental.com</a>
+                        </address>
                     </div>
                     <div className="col-12 col-sm-6 offset-sm-1">
                         <h5>Map of our Location</h5>
@@ -129,7 +130,7 @@ class Contact extends Component {
                         <div className="btn-group" role="group">
                             <a role="button" className="btn btn-primary" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
                             <a role="button" className="btn btn-info" href="www.skype.com"><i className="fa fa-skype"></i> Skype</a>
-                            <a role="button" className="btn btn-success" href="mailto:confusion@food.net"><i className="fa fa-envelope-o"></i> Email</a>
+                            <a role="button" className="btn btn-success" href="mailto:info@tulipcontinental.com"><i className="fa fa-envelope-o"></i> Email</a>
                         </div>
                     </div>
                 </div>
